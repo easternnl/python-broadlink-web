@@ -22,7 +22,7 @@ Usage::
 Created by Eastern
 """
 import logging
-#import broadlink
+import broadlink
 import SimpleHTTPServer
 import SocketServer
 import BaseHTTPServer
@@ -71,15 +71,15 @@ class S(SimpleHTTPRequestHandler):
             for command in irconfig.commands:
                 self.wfile.write("<a href=/{}>{}</a><br />".format(command, command).encode('utf-8'))
         else : 
-            #self.wfile.write("command:".encode('utf-8'))    
+             #self.wfile.write("command:".encode('utf-8'))
             command = self.path.replace('/','')
             #type = 0x2737
             #host = "192.168.1.1"
             #mac = bytearray.fromhex("abcdef")
-            #dev = broadlink.gendevice(broadlinkconfig.type, (broadlinkconfig.host, 80), bytearray.fromhex(broadlinkconfig.mac))
-            #dev.auth()
+            dev = broadlink.gendevice(broadlinkconfig.type, (broadlinkconfig.host, 80), bytearray.fromhex(broadlinkconfig.mac))
+            dev.auth()
             payload = get_command_data(command, 1)
-            #dev.send_data(payload)
+            dev.send_data(payload)
             self.wfile.write("command <b>{}</b> send<br />".format(command).encode('utf-8'))
             self.wfile.write("<br /><a href=/>Return to index</a>".encode('utf-8'))
             
