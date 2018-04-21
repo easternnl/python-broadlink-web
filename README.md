@@ -5,6 +5,8 @@ This is a small webserver and load the broadlink library at startup. It can take
 
 The webserver send the commands almost immediately.
 
+# todo
+1. Add learning mode for IR Codes
 
 # dependencies
 Python 2.7.x (tested with 2.7.14)
