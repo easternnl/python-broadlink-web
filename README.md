@@ -1,6 +1,10 @@
 # python-broadlink-web
 Webinterface between Broadlink RM* device and home automation software such as Domoticz
 
+What is a broadlink device? See this page for more information: https://www.ibroadlink.com/rmMini3/
+
+Basically it supports to send IR codes to all kind of IR remote controlled devices with your smartphone or computer. In this case by the Python Webserver Script ;-)
+
 This is a small webserver and load the broadlink library at startup. It can take upto 5 seconds to load the library, which means that if you execute a script from the commandline it will always take 5 seconds before the command is send.
 
 The webserver send the commands almost immediately.
